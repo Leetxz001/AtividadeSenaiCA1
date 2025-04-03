@@ -1,0 +1,50 @@
+#include <Arduino.h>
+
+const int pinBotao = 3;
+
+// prototipos das funcoes
+//! esses voids tem que ser definidos fora do setup continuacao
+//!  E indicar o que tem dentro dele porque senao ele nao funciona e da erros
+
+//*Esses voids servem para deixar o codigo mais organizado.
+void ligaLed(int);
+void desligaLed(int);
+void piscaLed(int, unsigned long);
+int somaDeDoisNumeros(int, int);
+
+void setup()
+{
+  pinMode(2, OUTPUT);
+  Serial.begin(9600);
+}
+//? o que aprendemos do WHILE?
+// Aprendemos que  o WHILE funciona que nem o void loop,contudo,a condicao entre () sera testado variaveis vezes ate nao conseguir mais.
+
+void loop() // dentro desses void loop,ele consegue puxar o que tem dentro dos outros voids que foram criados.
+{
+
+  piscaLed(2, 100);
+  int resultadoDaSoma = somaDeDoisNumeros(4, 8);
+  Serial.println(resultadoDaSoma;)
+}
+
+void ligaLed(int pin)
+{
+  digitalWrite(pin, HIGH);
+}
+void desligaLed(int pin)
+{
+  digitalWrite(pin,LOW);
+}
+void piscaLed(int pin,unsigned long tempo)
+{
+ligaLed (pin);
+delay(tempo);
+desligaLed(pin);
+delay(tempo);
+}
+int somaDosNumeros (int numeroA, int numeroB)
+{
+  int resultado = numeroA + numeroB;
+  return resultado;
+}
